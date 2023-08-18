@@ -5,3 +5,6 @@ export interface ITodo {
     title: string;
     complete: boolean;
 }
+export interface ITodoProps{
+    todo: ITodo;
+}
