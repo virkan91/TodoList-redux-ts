@@ -1,19 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../store/store";
 import { ITodo } from "../components/Todos/types";
+import type { PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: ITodo[] = [
-    {
-        id: 1,
-        title: "name",
-        complete: false
-    },
-    {
-        id: 2,
-        title: "noname",
-        complete: false
-    }
-]
+  {
+    title: "name",
+    complete: false,
+    id: 1,
+  },
+  {
+    title: "noname",
+    complete: false,
+    id: 2,
+  },
+  {
+    title: "yesn",
+    complete: false,
+    id: 3,
+  }
+];
 
 // const initialState: CounterState = {
 //   value: 0,
@@ -21,13 +27,16 @@ const initialState: ITodo[] = [
 
 export const todoSlice = createSlice({
   name: "todos",
-    initialState,
-  
+  initialState,
+
   reducers: {
-   
+    //    delete
+    deleteTodo: (state: ITodo[], action: PayloadAction<number>) => {
+      return state.filter((todo: ITodo) => todo.id !== action.payload);
+    },
   },
 });
 
-export const { } = todoSlice.actions;
+export const { deleteTodo } = todoSlice.actions;
 export const selectCount = (state: RootState) => state.counterSlice.value;
 export default todoSlice.reducer;
