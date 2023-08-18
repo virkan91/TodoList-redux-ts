@@ -15,7 +15,7 @@ const initialState: ITodo[] = [
     id: 2,
   },
   {
-    title: "yesname",
+    title: "yesn",
     complete: false,
     id: 3,
   }
