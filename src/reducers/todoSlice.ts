@@ -14,6 +14,11 @@ const initialState: ITodo[] = [
     complete: false,
     id: 2,
   },
+  {
+    title: "yesname",
+    complete: false,
+    id: 3,
+  }
 ];
 
 // const initialState: CounterState = {
